@@ -1,0 +1,12 @@
+body{
+	text-align:center;
+	margin-top:100px;
+}
+
+#colorbtn{
+	color:blue;
+	background-color:0,0,0,0;
+	border:none;
+	font-size:1.5rem;
+	border-radius:3;
+}
