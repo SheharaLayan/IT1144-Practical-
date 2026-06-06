@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background: #0f172a;
+    color: white;
+}
+nav{
+    width: 100%;
+    padding: 1rem 5%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /*Navigation bar eka blur karanna*/
+    margin-bottom: 2rem;/*nav eke yata margin eka wadi karanna*/
+    display: flex;/*items tika ekama peliyata ganna*/
+    align-items: center;/*items tika navigation bar eke udinui yatinui hari madata ganna*/
+    /*justify-content: space-between;/*navigation bar eke ganata mada ida thiyala hadanna*/
+    justify-content: flex-end;/*navigation bar eke okkoma eka end eka paththta yawanna(dakunata)*/
+
+}
+.logo{
+    font-size: 1.8rem;
+    font-weight:700 ;
+    color: #38bdf8;
+    margin-right:auto;/*aye wamata ganna logo eka witharak*/
+}
+.nav-links{
+    list-style: none;/*dot eka nathi karanna*/
+    display: flex;/*navigation links tika eka digata ganna */
+    gap: 2rem;/*links athara paratharaya wadi karanna*/
+    margin-right: 30px;/*links tika wam paththata yawanna*/
+}
+.nav-links a{
+    position: relative;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-decoration: none;/*link eka nathi karanna*/
+    color: #e2e8f0;
+    transition: 0.3s;
+}
+.nav-links li a:hover{
+    color: #38bdf8;
+    text-shadow: 0 0 10px #38bdf8;
+}
+.btns{
+    display: flex;
+}
+.btn{
+    padding: 0.5rem 1.5rem;/*button eka ehata geniyanna*/
+    border-radius: 30px;/*button eka wate raum karanna*/
+    font-weight: 600;
+    font-size: 1rem;
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 15px #38bdf8 ;/*shadow ekak danna button ekata*/
+    border: none;/*button eka wate border eka ain karanna*/
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background: #0aa9f3;
+    box-shadow: 0 0 25px #0aa9f3;
+}
