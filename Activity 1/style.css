@@ -1,0 +1,133 @@
+*{
+    font-family: sans-serif;
+}
+img{
+    justify-content: center;
+}
+.header{
+    display: flex;
+    overflow-y: scroll;
+}
+.logo{
+    flex: 1;
+    margin-left: 40px;
+}
+
+.title{
+    flex: 6;
+    display: flex;
+    float: right;
+    margin-right: 10%;
+    top: 0%;
+    padding: 50px 50px 0 200px;
+}
+.nav-image{
+    align-items: center;
+    margin: 10px;
+}
+.navigationbar li{
+    float: left;
+    list-style-type: none;
+    margin: 20px 20px 20px 20px;
+}
+.navigationbar li a{
+    color: black;
+    text-decoration: none;
+}
+.navigationbar li a:hover{
+    background-color: rgb(63, 108, 190);
+    padding: 10px;
+    color: white;
+    border: 10px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+}
+.navigationbar{
+    background-color: cornflowerblue;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img1{
+    width: 100%;
+    height: 800px;
+}
+
+.h2{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+.list{
+    text-decoration: none;
+    justify-content: center;
+}
+.menu{
+    display: inline;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+
+}
+.nav ul li{
+    text-decoration: none;
+    display: inline;
+    justify-content: space-between;
+    gap: 50px;
+
+}
+.list a{
+    text-decoration: none;
+    color: black;
+}
+.Para1{
+    color: rgb(192, 14, 73);
+    justify-content: center;
+}
