@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Learning Hub</title>
+    <link rel="icon" type="image/png" href="images.jfif">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="ln1.jpg" alt="logoimage" class="nav-logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="index.html#vd-sec">Tutorials</a></li>
+            <li><a href="#login-section">Sign In</a></li>
+            <li><a href="about.html">About US</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-container">
+        <div class="sidebar">
+            <h3>NETVERSE</h3><br>
+            <p class="intp">NETVERSE is an interactive, multi-page educational platform engineered to serve as a practical learning portal for <b>Networking students</b> and <b>Aspiring System Administrators</b></p>
+        </div>
+        <div class="main-display">
+            
+            <div class="gallery-card"><br>
+                <h2>Switches</h2><br>
+                <img id="gallery-img" src="4300erp.png" alt="Network Switch"><br>
+                <div class="gallery-info">
+                    <h4 id="gallery-title">Cisco Catalyst 9300 Series</h4><br>
+                    <p id="gallery-desc">The Cisco Catalyst 9300-24T is a high-performance Layer 2/3 enterprise <br>switch featuring 24 data-only ports. It is engineered for secure branch networks, offering advanced support for segmented Virtual LANs (VLANs), high-speed 802.1Q trunk lines, and enhanced network security configurations like hardware-anchored Access Control Lists (ACLs).</p><br>
+                    <button id="cta-btn"><a href="device_details1.html">About This Device</a></button><br>
+                </div>
+            </div>
+            <div class="gallery-card"><br>
+                <h2>Routers</h2><br>
+                <img id="gallery-img" src="9300e.png" alt="Network Switch"><br><br><br>
+                <div class="gallery-info">
+                    <h4 id="gallery-title">Cisco ISR 4000 Series</h4><br>
+                    <p id="gallery-desc">The Cisco ISR 4331 is a modular enterprise-grade network router designed to handle high-performance routing, security firewalls, and network automation across medium-sized corporate offices. 
+                        It supports advanced features like Intelligent WAN (IWAN), integrated security encryption, dynamic IP allocation, and scalable network expansion modules.</p><br>
+                    <button id="cta-btn" class="btn1"><a href="device_details2.html">About This Device</a></button><br>
+                </div>
+            </div>
+        </div>
+
+    <section class="video-section" id="vd-sec">
+    <h3>Featured Tutorial: Router as a DHCP Server</h3>
+    <p class="video-subtitle">Watch this step-by-step guide to configure a Cisco router As a DHCP Server.</p>
+    
+    <div class="video-wrapper">
+        <video controls poster="Black and Green Simple Business Youtube Thumbnail.png" class="local-player">
+                    <source src="Router as a DHCPv4 Server.mp4" type="video/mp4">
+                    
+                </video>
+    </div>
+</section>
+
+    <section id="login-section" class="form-section">
+    <div class="form-container">
+        <h3>User Profile Registration</h3>
+        <p class="form-subtitle">Enter your profile information below:</p>
+        
+        <form id="userForm">
+            <div class="form-group">
+                <label for="userFirstName">First Name:</label>
+                <input type="text" id="userFirstName" required placeholder="Type your first name...">
+            </div>
+            
+            <div class="form-group">
+                <label for="userLastName">Last Name:</label>
+                <input type="text" id="userLastName" required placeholder="Type your last name...">
+            </div>
+
+            <div class="form-group">
+                <label for="userEmail">Email Address:</label>
+                <input type="email" id="userEmail" required placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="userGender">Gender:</label>
+                <select id="userGender" required>
+                    <option value="">-- Select Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Info</button>
+        </form>
+
+        <div id="formOutput" class="output-box hidden">
+            <h4>Review Entered Details:</h4>
+            <div class="display-data">
+                <p id="outputFullName"></p>
+                <p id="outputEmail"></p>
+                <p id="outputGender"></p>
+            </div>
+            <p class="confirmation-note">If the above details are correct, click confirm below:</p>
+            <button id="confirmBtn" class="confirm-btn">Confirm Profile Details</button>
+            
+            <div id="finalStatus" class="status-msg"></div>
+        </div>
+
+    </div>
+</section>
+
+    <script src="script.js"></script>            
+<footer>
+        <p>&copy; 2026 Cisco Learning Portal</p>
+    </footer>
+</body>
+</html>

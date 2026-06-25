@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco History - Architectural Timeline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="ln1.jpg" alt="logoimage" class="nav-logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="index.html#vd-sec">Tutorials</a></li>
+            <li><a href="index.html#login-section">Sign In</a></li>
+            <li><a href="about.html">About US</a></li>
+        </ul>
+    </nav>
+    <main class="details-container">
+        
+        <section class="device-specs">
+            <h2 id="device-heading">Cisco Catalyst Switch 2911</h2>
+            <div class="device-card-large">
+                <img id="device-large-img" src="switch.png" alt="Cisco Asset">
+                
+                <h3>What can you do with this device?</h3>
+                <ul id="device-features-list">
+                    <p>Switches operate primarily at Layer 2 (Data Link Layer) of the OSI model. 
+                    They are used to connect devices (computers, printers, servers) within the same local area network (LAN).</p><br>
+                    <li>MAC Address Table: Unlike a hub that blindly floods data to all ports, a switch intelligently reads incoming frames, builds a table of MAC Addresses, and forwards data only to the specific port of the destination device.</li><br>
+                    <li>VLAN Segmentation (Virtual LANs): Switches allow you to logically split one physical network into multiple isolated virtual networks (e.g., separating the HR Department from the Finance Department) for optimized security and reduced broadcast traffic congestion.</li><br>
+                    <li>Trunking (802.1Q): Allows multiple VLAN data streams to pass securely through a single physical cable between two connected switches.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--<section class="device-config">
+            <h3>Terminal Running Configuration</h3>
+            <p class="config-subtitle">Live terminal structure for the node:</p>
+            
+            <div class="black-box">
+                <div class="config-header" id="terminal-title">Terminal - Cisco Catalyst Switch 2911</div>
+                <pre><code id="terminal-code"><span class="cmd-prompt">Switch&gt;</span> enable
+<span class="cmd-prompt">Switch#</span> configure terminal
+<span class="cmd-prompt">Switch(config)#</span> hostname Switch2911
+<span class="cmd-prompt">Switch2911(config)#</span> vlan 10
+<span class="cmd-prompt">Switch2911(config-vlan)#</span> name Management
+<span class="cmd-prompt">Switch2911(config-vlan)#</span> exit
+<span class="cmd-prompt">Switch2911(config)#</span> interface fa0/1
+<span class="cmd-prompt">Switch2911(config-if)#</span> switchport mode access
+<span class="cmd-prompt">Switch2911(config-if)#</span> switchport access vlan 10</code></pre>
+            </div>-->
+            <section class="device-config">
+            <h3>Terminal Running Configuration</h3>
+            <p class="config-subtitle">Live terminal structure for the node:</p>
+            
+            <div class="black-box">
+                <div class="config-header" id="terminal-title">Terminal - Cisco Catalyst Switch 2911</div>
+                <pre><code id="terminal-code"><span class="cmd-prompt">Switch&gt;</span> enable
+<span class="cmd-prompt">Switch#</span> configure terminal
+<span class="cmd-prompt">Switch(config)#</span> hostname Switch2911
+
+<span class="comment-line">! -- VLAN CREATION --</span>
+<span class="cmd-prompt">Switch(config)#</span> vlan 10
+<span class="cmd-prompt">Switch(config-vlan)#</span> name Management
+<span class="cmd-prompt">Switch(config-vlan)#</span> exit
+
+<span class="comment-line">! -- INTERFACE ACCESS AND TRUNK SETTINGS --</span>
+<span class="cmd-prompt">Switch(config)#</span> interface fa0/1
+<span class="cmd-prompt">Switch(config-if)#</span> switchport mode access
+<span class="cmd-prompt">Switch(config-if)#</span> switchport access vlan 10
+<span class="cmd-prompt">Switch(config-if)#</span> exit
+<span class="cmd-prompt">Switch(config)#</span> interface fa0/24
+<span class="cmd-prompt">Switch(config-if)#</span> switchport mode trunk
+
+<span class="comment-line">! -- ENABLING SECURE SSH ACCESS --</span>
+<span class="cmd-prompt">Switch(config)#</span> ip domain-name ciscohub.local
+<span class="cmd-prompt">Switch(config)#</span> crypto key generate rsa (2048)
+<span class="cmd-prompt">Switch(config)#</span> username admin privilege 15 secret AdminPass123
+<span class="cmd-prompt">Switch(config)#</span> line vty 0 4
+<span class="cmd-prompt">Switch(config-line)#</span> transport input ssh
+<span class="cmd-prompt">Switch(config-line)#</span> login local</code></pre>
+            </div>
+            
+            <a href="./index.html" class="back-btn">&larr; Back to Dashboard</a>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2026 Cisco Learning Portal</p>
+    </footer>
+</body>
+</html>

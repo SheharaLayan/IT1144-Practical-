@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco History - Architectural Timeline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="ln1.jpg" alt="logoimage" class="nav-logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="index.html#vd-sec">Tutorials</a></li>
+            <li><a href="index.html#login-section">Sign In</a></li>
+            <li><a href="about.html">About US</a></li>
+        </ul>
+    </nav>
+<main class="details-container">
+        
+        <section class="device-specs">
+            <h2 id="device-heading">Cisco Routers</h2>
+            <div class="device-card-large">
+                <img id="device-large-img" src="router.png" alt="Cisco Asset">
+                
+                <h3>What can you do with this device?</h3>
+                <ul id="device-features-list">
+                    <p>Routers operate at Layer 3 (Network Layer) of the OSI model. 
+                    Their primary purpose is to join completely different networks 
+                    together (such as connecting your school's private LAN to the global Internet).</p><br>
+                    <li>Routing Table: Routers read destination IP Addresses (instead of MAC addresses) and consult internal routing protocols to select the single fastest, most efficient pathway across different regional networks.</li><br>
+                    <li>Inter-VLAN Routing: Because switches isolate VLAN networks from one another completely, a Router (or Layer 3 switch) is required to act as a default gateway so users on VLAN 10 can safely talk to users on VLAN 20.</li><br>
+                    <li>Network Services (DHCP & NAT): DHCP Server: Automatically assigns IP addresses, subnet masks, and DNS servers to host devices so network administrators don't have to type them in manually.</li><br>
+                </ul>
+            </div>
+        </section>
+            <section class="device-config">
+            <h3>Terminal Running Configuration</h3>
+            <p class="config-subtitle">Live terminal structure for the node:</p>
+            
+            <div class="black-box">
+                <div class="config-header" id="terminal-title">Terminal - Cisco Enterprise ISR Router</div>
+                
+                <pre><code id="terminal-code"><span class="cmd-prompt">Router&gt;</span> enable
+<span class="cmd-prompt">Router#</span> configure terminal
+<span class="cmd-prompt">Router(config)#</span> hostname CentralRouter
+
+<span class="comment-line">! -- IP ADDRESS CONFIGURATION --</span>
+<span class="cmd-prompt">CentralRouter(config)#</span> interface gigabitEthernet 0/0
+<span class="cmd-prompt">CentralRouter(config-if)#</span> description Connection_to_LAN
+<span class="cmd-prompt">CentralRouter(config-if)#</span> ip address 192.168.1.1 255.255.255.0
+<span class="cmd-prompt">CentralRouter(config-if)#</span> no shutdown
+<span class="cmd-prompt">CentralRouter(config-if)#</span> exit
+
+<span class="comment-line">! -- INTER-VLAN ROUTING CONFIG (SUB-INTERFACES) --</span>
+<span class="cmd-prompt">CentralRouter(config)#</span> interface gigabitEthernet 0/0.10
+<span class="cmd-prompt">CentralRouter(config-subif)#</span> encapsulation dot1Q 10
+<span class="cmd-prompt">CentralRouter(config-subif)#</span> ip address 192.168.10.1 255.255.255.0
+<span class="cmd-prompt">CentralRouter(config-subif)#</span> exit
+
+<span class="comment-line">! -- DHCP SERVER POOL CONFIGURATION --</span>
+<span class="cmd-prompt">CentralRouter(config)#</span> ip dhcp pool LAN_USERS
+<span class="cmd-prompt">CentralRouter(dhcp-config)#</span> network 192.168.1.0 255.255.255.0
+<span class="cmd-prompt">CentralRouter(dhcp-config)#</span> default-router 192.168.1.1
+<span class="cmd-prompt">CentralRouter(dhcp-config)#</span> dns-server 8.8.8.8
+<span class="cmd-prompt">CentralRouter(dhcp-config)#</span> exit
+
+<span class="comment-line">! -- DYNAMIC ROUTING SYSTEM SETUP (OSPF) --</span>
+<span class="cmd-prompt">CentralRouter(config)#</span> router ospf 1
+<span class="cmd-prompt">CentralRouter(config-router)#</span> router-id 1.1.1.1
+<span class="cmd-prompt">CentralRouter(config-router)#</span> network 192.168.1.0 0.0.0.255 area 0
+<span class="cmd-prompt">CentralRouter(config-router)#</span> network 192.168.10.0 0.0.0.255 area 0</code></pre>
+            </div>
+            
+            <a href="./index.html" class="back-btn">&larr; Back to Dashboard</a>
+        </section>
+        
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Cisco Learning Portal</p>
+    </footer>
+</body>
+</html>
